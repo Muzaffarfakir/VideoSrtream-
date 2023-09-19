@@ -12,7 +12,7 @@ function Login() {
 
 
     function send(){
-        axios.post("http://localhost:8000/login",{email,pass}).then((res)=>{
+        axios.post("https://videostream-back.onrender.com/login",{email,pass}).then((res)=>{
             if(res.data.mess==="exist"){
                 setCookies("access_token",res.data.token)
                 window.localStorage.setItem("token",res.data.token);
