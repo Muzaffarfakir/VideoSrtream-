@@ -18,7 +18,7 @@ function AddVideo() {
         } else {
             axios({
                 method: 'post',
-                url: "http://localhost:8000/AddVideo/",
+                url: "https://videostream-back.onrender.com/AddVideo/",
                 data: data,
                 headers: {
                     "Content-Type": "multipart/form-data"
