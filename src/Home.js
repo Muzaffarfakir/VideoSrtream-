@@ -7,7 +7,7 @@ function Home() {
     let [data, setData] = useState([]);
     let [cookie, setCookies] = useCookies(["access_token"]);
     function result() {
-        fetch("http://localhost:8000/").then((res) => res.json()).then((data) => {
+        fetch("https://videostream-back.onrender.com/").then((res) => res.json()).then((data) => {
             setData(data)
         })
     }
