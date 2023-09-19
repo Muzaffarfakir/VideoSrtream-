@@ -17,7 +17,7 @@ function Signup() {
             alert("write all fields First")
         }
         else {
-            axios.post("http://localhost:8000/Signdata", { name, email, pass })
+            axios.post("https://videostream-back.onrender.com/Signdata", { name, email, pass })
             nav("/login")
         }
     }
