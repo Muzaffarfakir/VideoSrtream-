@@ -24,9 +24,9 @@ function AddVideo() {
                     "Content-Type": "multipart/form-data"
                 }
             })
+             nav("/")
 
         }
-        nav("/")
 
 
     }
