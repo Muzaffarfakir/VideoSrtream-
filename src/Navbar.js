@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, BrowserRouter, Link } from "react-router-dom"
+import { Route, Routes, BrowserRouter, Link ,HashRouter} from "react-router-dom"
 import "./Navbar.css"
 import Signup from "./SignUp";
 import Login from "./Login";
@@ -18,7 +18,7 @@ function Navbar() {
     return (
 
         <>
-            <BrowserRouter>
+            <HashRouter>
                 <nav>
                     <ul>
 
@@ -55,7 +55,7 @@ function Navbar() {
                     />
                 </Routes>
 
-            </BrowserRouter>
+            </HashRouter>
 
         </>
     )
