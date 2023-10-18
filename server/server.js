@@ -4,7 +4,9 @@ let cors = require("cors")
 let mongoose = require("mongoose");
 let jwt = require("jsonwebtoken");
 let multer = require("multer")
-let path = require("path")
+let path = require("path");
+let cloud = require("cloudinary").v2;
+
 let port = 8000;
 let url = "mongodb://fakirmuzaffar771:Muzaffar@ac-77j3fy3-shard-00-00.p8eviav.mongodb.net:27017,ac-77j3fy3-shard-00-01.p8eviav.mongodb.net:27017,ac-77j3fy3-shard-00-02.p8eviav.mongodb.net:27017/?ssl=true&replicaSet=atlas-13289m-shard-0&authSource=admin&retryWrites=true&w=majority"
 let par = {
