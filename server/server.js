@@ -40,7 +40,11 @@ let upload = multer({
     storage: storage
 })
 app.use(express.static(path.join(__dirname, "upload")))
-
+cloud.config({
+    cloud_name: 'dm0thlxai',
+    api_key: '583765424425853',
+    api_secret: 'brfFu8p3eAEMmLWOaMcUxtyL96s'
+});
 app.post("/Signdata", (req, res) => {
     let data = new user({
         name: req.body.name,
@@ -62,12 +66,19 @@ app.post("/login", async (req, res) => {
 
 
 })
-app.post("/AddVideo", upload.single("file"), (req, res) => {
-    let url = req.protocol + "://" + req.get("host")
+app.post("/AddVideo", upload.single("file"),async (req, res) => {
+  //  let url = req.protocol + "://" + req.get("host")
+    try{
+    let v=req.file.path;
+    let rr=await cloud.uploader.upload(v)    
+        
     let data = new post({
-        video: url + "/" + req.file.filename
+        video: rr.url
     })
     data.save();
+    }catch(er){
+        console.log(er)
+    }
 })
 app.get("/", async (req, res) => {
     let data = await post.find()
