@@ -70,11 +70,12 @@ app.post("/AddVideo", upload.single("file"),async (req, res) => {
   //  let url = req.protocol + "://" + req.get("host")
     try{
     let v=req.file.path;
-    let rr=await cloud.uploader.upload(v)    
+    let rr=await cloud.uploader.upload(v).then((r)=>{
         
     let data = new post({
-        video: rr.url
+        video: r.url
     })
+})    
     data.save();
     }catch(er){
         console.log(er)
